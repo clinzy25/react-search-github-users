@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import mockUser from './mockData.js/mockUser';
 import mockRepos from './mockData.js/mockRepos';
@@ -61,8 +61,6 @@ const GithubProvider = ({ children }) => {
     checkRequests();
     setLoading(false);
   };
-
-  useEffect(checkRequests, []);
 
   return (
     <GithubContext.Provider
