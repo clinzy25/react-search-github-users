@@ -62,6 +62,8 @@ const GithubProvider = ({ children }) => {
     setLoading(false);
   };
 
+  checkRequests();
+
   return (
     <GithubContext.Provider
       value={{
