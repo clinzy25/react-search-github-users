@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
-import { setEasingEffect } from 'fusioncharts';
 import React from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
@@ -38,6 +37,7 @@ const Repos = () => {
 
   let { stars, forks } = repos.reduce(
     (total, item) => {
+      // eslint-disable-next-line
       const { stargazers_count, forks, name } = item;
       total.stars[stargazers_count] = { label: name, value: stargazers_count };
       total.forks[forks] = { label: name, value: forks };

@@ -22,7 +22,7 @@ const GithubProvider = ({ children }) => {
   const checkRequests = async () => {
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }) => {
-        let {
+        const {
           rate: { remaining },
         } = data;
         setRequests(remaining);
@@ -46,6 +46,7 @@ const GithubProvider = ({ children }) => {
         axios(`${rootUrl}/users/${login}/repos?per_page=100`),
         axios(`${followers_url}?per_page=100`),
       ]).then((results) => {
+        // eslint-disable-next-line
         const [repos, followers] = results;
         if (repos.status === 'fulfilled') {
           setRepos(repos.value.data);

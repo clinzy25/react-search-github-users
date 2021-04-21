@@ -5,13 +5,9 @@ import { GithubContext } from '../context/context';
 
 const Search = () => {
   const [user, setUser] = React.useState('');
-  const {
-    requests,
-    error,
-    rootUrl,
-    searchGithubUser,
-    loading,
-  } = React.useContext(GithubContext);
+  const { requests, error, searchGithubUser, loading } = React.useContext(
+    GithubContext
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +37,9 @@ const Search = () => {
             {requests && !loading && <button type='submit'>Search</button>}
           </div>
         </form>
-        <h3 title='API requests are limited to 60 per hour'>requests : {requests} / 60</h3>
+        <h3 title='API requests are limited to 60 per hour'>
+          requests : {requests} / 60
+        </h3>
       </Wrapper>
     </section>
   );
